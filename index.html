@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Mandi Knights Family Restaurant</title>
     
-    <!-- 1. GOOGLE ANALYTICS 4 TRACKING SCRIPT -->
+    <!-- GOOGLE ANALYTICS 4 TRACKING SCRIPT -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=PASTE_YOUR_TRACKER_ID_HERE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -47,11 +47,11 @@
         }
 
         .dev-logo {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 3px solid var(--primary-gold);
-            box-shadow: 0 0 15px rgba(200, 135, 40, 0.5);
+            box-shadow: 0 0 15px rgba(200, 135, 40, 0.6);
             margin-bottom: 12px;
             object-fit: cover;
         }
@@ -70,15 +70,15 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'Impact', 'Arial Black', sans-serif;
-            font-size: 2rem;
+            font-size: 1.9rem;
             letter-spacing: 1px;
-            margin: 0 0 8px 0;
+            margin: 0 0 6px 0;
         }
 
         .dev-banner .contact {
             color: #ffffff;
             font-size: 0.9rem;
-            margin: 3px 0;
+            margin: 2px 0;
         }
 
         .dev-banner .phone {
@@ -90,7 +90,7 @@
         .container {
             width: 100%;
             max-width: 500px;
-            padding: 25px 15px;
+            padding: 20px 15px;
             box-sizing: border-box;
             text-align: center;
         }
@@ -111,9 +111,9 @@
         .step-box {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 20px;
+            padding: 20px 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-top: 25px;
+            margin-top: 20px;
             border: 1px solid #e0d8c8;
         }
 
@@ -121,27 +121,47 @@
             font-size: 1rem;
             font-weight: bold;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+        }
+
+        /* SCROLLABLE COMMENTS CONTAINER */
+        .options-list {
+            max-height: 380px;
+            overflow-y: auto;
+            padding-right: 5px;
+            border: 1px solid #eae2d5;
+            border-radius: 8px;
+            background: #faf8f5;
+            padding: 10px;
+        }
+
+        .options-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .options-list::-webkit-scrollbar-thumb {
+            background-color: var(--primary-gold);
+            border-radius: 4px;
         }
 
         .comment-option {
-            background: #f1ede4;
-            padding: 14px;
+            background: #ffffff;
+            padding: 12px;
             border-radius: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             cursor: pointer;
-            border: 2px solid transparent;
+            border: 2px solid #e6ded0;
             text-align: left;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             line-height: 1.4;
             transition: all 0.2s ease;
         }
 
         .comment-option.selected {
             border-color: var(--primary-gold);
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(200, 135, 40, 0.2);
-            font-weight: 500;
+            background: #fffdf7;
+            box-shadow: 0 2px 8px rgba(200, 135, 40, 0.25);
+            font-weight: 600;
         }
 
         .action-btn {
@@ -154,7 +174,7 @@
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 15px;
             box-shadow: 0 4px 12px rgba(200, 135, 40, 0.4);
             text-transform: uppercase;
         }
@@ -176,10 +196,9 @@
 </head>
 <body>
 
-    <!-- DEVELOPER BANNER WITH LOGO -->
+    <!-- DEVELOPER BANNER WITH BRANDING LOGO -->
     <div class="dev-banner">
-        <!-- Logo file should be in the same folder as index.html -->
-        <img src="logo.png" alt="Syed Zeeshaan Ali Logo" class="dev-logo">
+        <img src="logo.png" alt="Syed Zeeshaan Ali Smart Scan Logo" class="dev-logo">
         <div class="subtitle">System Developed & Powered By</div>
         <div class="name">SYED ZEESHAAN ALI</div>
         <div class="contact">Instagram: @syedzeeshaanali07</div>
@@ -195,9 +214,10 @@
         </div>
 
         <div class="step-box">
-            <div class="instruction">1. Tap a comment to select it:</div>
+            <div class="instruction">1. Tap any comment below to select:</div>
             
-            <div id="opts">
+            <!-- 22 CUSTOM REVIEW OPTIONS -->
+            <div class="options-list" id="opts">
                 <div class="comment-option selected" onclick="selectComment(this)">
                     "The Mutton Juicy Mandi is absolute perfection! Meat is extremely soft and the rice is flavorful. Excellent family environment!"
                 </div>
@@ -207,9 +227,66 @@
                 <div class="comment-option" onclick="selectComment(this)">
                     "Top quality food with generous portions! The complementary soup and mayonnaise were fresh and delicious. Highly recommended! 10/10"
                 </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Chicken Wings Mandi is a must-try here! Perfectly spiced, crispy outside, and super juicy inside. Will definitely visit again."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Amazing ambiance for family dinners. The staff is polite, prompt, and recommended the best dishes. Loved the Special Chicken Mandi!"
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Authentic Arabian flavors right here! The mutton melted off the bone and the flavored rice was aromatic and rich."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Great value for money! Big portions, super clean seating area, and fast serving even on busy weekends."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "The Majlis floor seating setup gives a traditional authentic vibe. Perfect place for celebrating birthdays and group hangouts!"
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Juicy Mutton Mandi combined with their signature mayo is next level! Best food joint in town."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Clean environment, hygiene maintained well, and top-tier hospitality. The soup served at the start sets the mood right!"
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Crispy Fish Mandi was surprisingly delicious! Fresh fish, well-marinated, and cooked to perfection."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Extremely fast service and friendly staff. The Chicken Dum Mandi had rich aroma and great flavor balance."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Unmatched Mandi taste in the entire region! The meat tenderized so well and the spices are just right."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Visited with a family of 8, everyone loved it! Spacious seating, comfortable setup, and tasty food items."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Tender mutton pieces, fluffy long-grain rice, and heavenly taste! A true paradise for food lovers."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Tried the Chicken Fried Mandi and it was phenomenal! Crispy texture outside, juicy inside. 5 stars easily."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Generous quantity of rice and meat. The side sauces and soup made the experience even better!"
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Awesome hospitality by the management and staff. Clean private cabins for families. Highly recommended!"
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "The aroma when the Mandi platter arrives is irresistible! Authentic Arabian taste and generous portions."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Hands down the best Mandi restaurant in Khammam! Superb quality control and mouthwatering taste every single time."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Fabulous dining experience! The starter soup, juicy mutton, and delicious mayo made our evening special."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Consistent quality and authentic spices. Mandi Knights never disappoints when it comes to flavor!"
+                </div>
             </div>
 
-            <div class="instruction" style="margin-top: 20px;">2. Post to Google Maps:</div>
+            <div class="instruction" style="margin-top: 20px;">2. Post directly to Google Maps:</div>
             
             <button class="action-btn" id="submitBtn" onclick="copyAndRedirect()">
                 Copy & Open Maps
@@ -225,7 +302,7 @@
         function selectComment(el) {
             document.querySelectorAll('.comment-option').forEach(e => e.classList.remove('selected'));
             el.classList.add('selected');
-            selectedText = el.innerText.replace(/^"|"$/g, ''); 
+            selectedText = el.innerText.replace(/^"|"$/g, '').trim(); 
         }
 
         function copyAndRedirect() {
@@ -239,11 +316,11 @@
                 toast.style.display = 'block';
                 
                 setTimeout(function() {
-                    // 2. PASTE YOUR GOOGLE MAPS REVIEW LINK HERE
+                    // PASTE YOUR GOOGLE MAPS REVIEW LINK HERE
                     window.location.href = "https://maps.app.goo.gl/s4jm5UtzXXibzqud7";
                 }, 1000);
             }).catch(function(err) {
-                // 3. PASTE THE SAME GOOGLE MAPS REVIEW LINK HERE
+                // FALLBACK IF CLIPBOARD API FAILS ON OLDER PHONES
                 window.location.href = "https://maps.app.goo.gl/s4jm5UtzXXibzqud7";
             });
         }

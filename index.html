@@ -16,127 +16,134 @@
 
     <style>
         :root {
-            --primary-gold: #c88728;
-            --dark-bg: #111111;
-            --card-bg: #ffffff;
-            --page-bg: #f8f6f0;
+            --primary-gold: #d4af37;
+            --gold-glow: #ffdf00;
+            --dark-card: #18181c;
+            --dark-bg: #0a0a0c;
+            --text-gold: #f3e5ab;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--page-bg);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
-        /* --- DEVELOPER HEADER BANNER WITH LOGO --- */
+        /* --- PREMIUM DEVELOPER BANNER WITH LOGO --- */
         .dev-banner {
             width: 100%;
-            background: var(--dark-bg);
-            border-bottom: 4px solid var(--primary-gold);
-            padding: 20px 15px;
+            background: linear-gradient(180deg, #141419 0%, #0a0a0c 100%);
+            border-bottom: 2px solid var(--primary-gold);
+            padding: 25px 15px 18px 15px;
             text-align: center;
             box-sizing: border-box;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 25px rgba(212, 175, 55, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .dev-logo {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             border: 3px solid var(--primary-gold);
-            box-shadow: 0 0 15px rgba(200, 135, 40, 0.6);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
             margin-bottom: 12px;
             object-fit: cover;
         }
 
         .dev-banner .subtitle {
             color: var(--primary-gold);
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-weight: bold;
-            margin-bottom: 5px;
+            font-size: 0.75rem;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            margin-bottom: 4px;
             text-transform: uppercase;
         }
 
         .dev-banner .name {
-            background: linear-gradient(to right, #ffe066, #c88728, #ffe066);
+            background: linear-gradient(135deg, #fff2a3 0%, #d4af37 50%, #aa7c11 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'Impact', 'Arial Black', sans-serif;
-            font-size: 1.9rem;
-            letter-spacing: 1px;
+            font-size: 2.1rem;
+            letter-spacing: 1.5px;
             margin: 0 0 6px 0;
         }
 
         .dev-banner .contact {
-            color: #ffffff;
-            font-size: 0.9rem;
+            color: #d1d1d1;
+            font-size: 0.88rem;
             margin: 2px 0;
         }
 
         .dev-banner .phone {
-            color: #ffe066;
-            font-weight: bold;
+            color: var(--text-gold);
+            font-weight: 600;
         }
 
         /* --- MAIN APP CONTAINER --- */
         .container {
             width: 100%;
-            max-width: 500px;
-            padding: 20px 15px;
+            max-width: 480px;
+            padding: 20px 15px 30px 15px;
             box-sizing: border-box;
             text-align: center;
         }
 
         .restaurant-title h1 {
-            color: var(--dark-bg);
-            margin: 0 0 5px 0;
-            font-size: 1.6rem;
+            color: #ffffff;
+            margin: 0 0 4px 0;
+            font-size: 1.7rem;
+            font-weight: 700;
         }
 
         .restaurant-title p {
             color: var(--primary-gold);
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1.05rem;
             margin: 0;
+            letter-spacing: 1px;
         }
 
         .step-box {
-            background: var(--card-bg);
-            border-radius: 12px;
+            background: var(--dark-card);
+            border-radius: 16px;
             padding: 20px 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
             margin-top: 20px;
-            border: 1px solid #e0d8c8;
+            border: 1px solid rgba(212, 175, 55, 0.25);
         }
 
         .instruction {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #333;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-gold);
             margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
 
-        /* SCROLLABLE COMMENTS CONTAINER */
+        /* SCROLLABLE REVIEW OPTIONS */
         .options-list {
-            max-height: 380px;
+            max-height: 400px;
             overflow-y: auto;
-            padding-right: 5px;
-            border: 1px solid #eae2d5;
-            border-radius: 8px;
-            background: #faf8f5;
+            padding-right: 4px;
+            border-radius: 10px;
+            background: #101014;
             padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .options-list::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
 
         .options-list::-webkit-scrollbar-thumb {
@@ -145,58 +152,74 @@
         }
 
         .comment-option {
-            background: #ffffff;
-            padding: 12px;
-            border-radius: 8px;
+            background: #1c1c22;
+            padding: 14px 35px 14px 14px;
+            border-radius: 10px;
             margin-bottom: 10px;
             cursor: pointer;
-            border: 2px solid #e6ded0;
+            border: 1.5px solid rgba(212, 175, 55, 0.15);
             text-align: left;
             font-size: 0.92rem;
-            line-height: 1.4;
-            transition: all 0.2s ease;
+            line-height: 1.45;
+            color: #e0e0e0;
+            transition: all 0.25s ease;
+            position: relative;
         }
 
         .comment-option.selected {
             border-color: var(--primary-gold);
-            background: #fffdf7;
-            box-shadow: 0 2px 8px rgba(200, 135, 40, 0.25);
-            font-weight: 600;
+            background: linear-gradient(135deg, #242217 0%, #1c1a12 100%);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .comment-option.selected::after {
+            content: '★';
+            position: absolute;
+            right: 12px;
+            top: 14px;
+            color: var(--primary-gold);
+            font-size: 1.1rem;
         }
 
         .action-btn {
             width: 100%;
-            background: var(--primary-gold);
-            color: #ffffff;
+            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+            color: #000000;
             border: none;
             padding: 18px;
             font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 8px;
+            font-weight: 800;
+            border-radius: 10px;
             cursor: pointer;
-            margin-top: 15px;
-            box-shadow: 0 4px 12px rgba(200, 135, 40, 0.4);
+            margin-top: 18px;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
         }
 
         .action-btn:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
         }
 
         .toast-msg {
             display: none;
-            background: #27ae60;
-            color: white;
+            background: #1e4620;
+            color: #a3f7a5;
             padding: 12px;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-top: 15px;
-            font-weight: bold;
+            font-weight: 600;
+            border: 1px solid #27ae60;
         }
     </style>
 </head>
 <body>
 
-    <!-- DEVELOPER BANNER WITH BRANDING LOGO -->
+    <!-- BRANDING BANNER WITH LOGO -->
     <div class="dev-banner">
         <img src="logo.png" alt="Syed Zeeshaan Ali Smart Scan Logo" class="dev-logo">
         <div class="subtitle">System Developed & Powered By</div>
@@ -214,9 +237,9 @@
         </div>
 
         <div class="step-box">
-            <div class="instruction">1. Tap any comment below to select:</div>
+            <div class="instruction">1. Tap any review below to select:</div>
             
-            <!-- 22 CUSTOM REVIEW OPTIONS -->
+            <!-- 24 HIGH-QUALITY CUSTOM REVIEWS -->
             <div class="options-list" id="opts">
                 <div class="comment-option selected" onclick="selectComment(this)">
                     "The Mutton Juicy Mandi is absolute perfection! Meat is extremely soft and the rice is flavorful. Excellent family environment!"
@@ -284,6 +307,12 @@
                 <div class="comment-option" onclick="selectComment(this)">
                     "Consistent quality and authentic spices. Mandi Knights never disappoints when it comes to flavor!"
                 </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Perfect blend of Arabian spices! The meat is super soft and rice is cooked to perfection. 5 stars!"
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Top-class hospitality and luxury feel in Khammam. The whole family thoroughly enjoyed the Mandi platter."
+                </div>
             </div>
 
             <div class="instruction" style="margin-top: 20px;">2. Post directly to Google Maps:</div>
@@ -302,7 +331,7 @@
         function selectComment(el) {
             document.querySelectorAll('.comment-option').forEach(e => e.classList.remove('selected'));
             el.classList.add('selected');
-            selectedText = el.innerText.replace(/^"|"$/g, '').trim(); 
+            selectedText = el.innerText.replace(/^"|"$/g, '').replace(/★/g, '').trim(); 
         }
 
         function copyAndRedirect() {
@@ -310,18 +339,17 @@
             var toast = document.getElementById('toast');
             
             btn.innerText = "Copying...";
-            btn.style.background = "#8a5608";
 
             navigator.clipboard.writeText(selectedText).then(function() {
                 toast.style.display = 'block';
                 
                 setTimeout(function() {
                     // PASTE YOUR GOOGLE MAPS REVIEW LINK HERE
-                    window.location.href = "https://maps.app.goo.gl/s4jm5UtzXXibzqud7";
+                    window.location.href = "https://maps.app.goo.gl/noLN4jbvZseo2y4B7";
                 }, 1000);
             }).catch(function(err) {
                 // FALLBACK IF CLIPBOARD API FAILS ON OLDER PHONES
-                window.location.href = "https://maps.app.goo.gl/s4jm5UtzXXibzqud7";
+                window.location.href = "https://maps.app.goo.gl/noLN4jbvZseo2y4B7";
             });
         }
     </script>

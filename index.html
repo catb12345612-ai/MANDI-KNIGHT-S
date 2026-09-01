@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandi Knights Family Restaurant - Customer Reviews & Location</title>
+    <title>Review Mandi Knights Family Restaurant</title>
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- 1. GOOGLE ANALYTICS 4 TRACKING SCRIPT -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=PASTE_YOUR_TRACKER_ID_HERE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'PASTE_YOUR_TRACKER_ID_HERE');
     </script>
 
     <style>
@@ -20,321 +20,233 @@
             --dark-bg: #111111;
             --card-bg: #ffffff;
             --page-bg: #f8f6f0;
-            --text-color: #2b2b2b;
         }
 
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: var(--page-bg);
-            color: var(--text-color);
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        header {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            text-align: center;
-            padding: 40px 20px;
+        /* --- DEVELOPER HEADER BANNER WITH LOGO --- */
+        .dev-banner {
+            width: 100%;
+            background: var(--dark-bg);
             border-bottom: 4px solid var(--primary-gold);
+            padding: 20px 15px;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.4rem;
+        .dev-logo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-gold);
+            box-shadow: 0 0 15px rgba(200, 135, 40, 0.5);
+            margin-bottom: 12px;
+            object-fit: cover;
+        }
+
+        .dev-banner .subtitle {
             color: var(--primary-gold);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
-        header p {
-            margin-top: 8px;
-            font-size: 1.1rem;
-            color: #dddddd;
+        .dev-banner .name {
+            background: linear-gradient(to right, #ffe066, #c88728, #ffe066);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            margin: 0 0 8px 0;
         }
 
+        .dev-banner .contact {
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin: 3px 0;
+        }
+
+        .dev-banner .phone {
+            color: #ffe066;
+            font-weight: bold;
+        }
+
+        /* --- MAIN APP CONTAINER --- */
         .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
+            width: 100%;
+            max-width: 500px;
+            padding: 25px 15px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .restaurant-title h1 {
+            color: var(--dark-bg);
+            margin: 0 0 5px 0;
+            font-size: 1.6rem;
         }
 
-        .review-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-            border-top: 3px solid var(--primary-gold);
-        }
-
-        .reviewer-name {
+        .restaurant-title p {
+            color: var(--primary-gold);
             font-weight: bold;
             font-size: 1.1rem;
-            color: #1a1a1a;
+            margin: 0;
         }
 
-        .rating {
-            color: #f39c12;
-            margin: 6px 0;
-        }
-
-        .comment {
-            font-size: 0.95rem;
-            color: #555555;
-            line-height: 1.5;
-        }
-
-        /* Middle Custom Developer Banner */
-        .middle-banner {
-            grid-column: 1 / -1;
-            margin: 40px 0;
-            text-align: center;
-            background: var(--dark-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .custom-name-svg {
-            width: 100%;
-            max-width: 750px;
-            height: auto;
-        }
-
-        /* Google Maps Section */
-        .map-section {
-            margin-top: 50px;
+        .step-box {
             background: var(--card-bg);
-            padding: 25px;
             border-radius: 12px;
+            padding: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center;
+            margin-top: 25px;
+            border: 1px solid #e0d8c8;
         }
 
-        .map-section h2 {
-            color: var(--dark-bg);
+        .instruction {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
             margin-bottom: 15px;
         }
 
-        .map-container {
-            position: relative;
-            overflow: hidden;
-            padding-top: 45%;
+        .comment-option {
+            background: #f1ede4;
+            padding: 14px;
             border-radius: 8px;
-            border: 2px solid var(--primary-gold);
+            margin-bottom: 12px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            transition: all 0.2s ease;
         }
 
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .comment-option.selected {
+            border-color: var(--primary-gold);
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(200, 135, 40, 0.2);
+            font-weight: 500;
+        }
+
+        .action-btn {
             width: 100%;
-            height: 100%;
-            border: 0;
+            background: var(--primary-gold);
+            color: #ffffff;
+            border: none;
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(200, 135, 40, 0.4);
+            text-transform: uppercase;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: var(--dark-bg);
-            color: #888888;
-            font-size: 0.9rem;
-            margin-top: 40px;
+        .action-btn:active {
+            transform: scale(0.98);
+        }
+
+        .toast-msg {
+            display: none;
+            background: #27ae60;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Mandi Knights Family Restaurant</h1>
-        <p>Authentic Arabian & Hyderabadi Mandi Experience | Customer Ratings & Location</p>
-    </header>
-
-    <div class="container">
-        
-        <div class="reviews-grid">
-
-            <div class="review-card">
-                <div class="reviewer-name">Mohammed Abdul Rahim</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">The Juicy Mutton Mandi here is hands down the best in town! Meat was tender and falling off the bone. Excellent atmosphere for family dining.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Sowmya Reddy</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Loved the traditional Majlis seating setup. Great privacy for families and the Chicken Fried Mandi was extremely flavorful and fresh.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Syed Tariq Ahmed</div>
-                <div class="rating">★★★★☆</div>
-                <div class="comment">Great portions and rich spices. Soup served at the beginning was hot and delicious. Highly recommend their Special Mixed Platter.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Kavitha Rao</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Clean, hygienic, and very hospitable staff. The garlic mayonnaise and spicy tomato chutney complemented the rice perfectly.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Prashanth Kumar</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Celebrated my brother's birthday here. The ambiance is vibrant. Fast service even during peak weekend rush hours. 10/10!</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Mirza Salman Baig</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Authentic Arabian taste. Rice refilling is available and spice levels are well balanced. Premium experience overall.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Sneha Latha</div>
-                <div class="rating">★★★★☆</div>
-                <div class="comment">Good food quality and affordable family combos. Fish Mandi was surprisingly soft, fresh, and perfectly marinated.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Venkatesh Naidu</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Ample parking space and quick seating arrangements. Staff recommended the Mutton Juicy Mandi which was stellar.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Farhan Khan</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Top-notch flavor! The fried nuts and dry fruit topping on the rice gave it a royal touch. Definitely worth every rupee.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Ananya Sharma</div>
-                <div class="rating">★★★★☆</div>
-                <div class="comment">Loved the warm lighting and comfortable family section. Perfect destination for dinner after a busy day.</div>
-            </div>
-
-            <div class="middle-banner">
-                <svg class="custom-name-svg" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#ffe066;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#c88728;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#8a5608;stop-opacity:1" />
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    <rect x="10" y="10" width="780" height="220" rx="15" fill="none" stroke="url(#goldGrad)" stroke-width="3" />
-                    <rect x="22" y="22" width="756" height="196" rx="10" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="6,6" />
-                    
-                    <text x="400" y="50" font-family="'Georgia', serif" font-size="14" fill="#c88728" letter-spacing="3" text-anchor="middle">★ PAGE DEVELOPER & DESIGNER ★</text>
-                    
-                    <text x="400" y="105" font-family="'Impact', 'Arial Black', sans-serif" font-size="40" fill="url(#goldGrad)" text-anchor="middle" filter="url(#glow)" letter-spacing="2">
-                        SYED ZEESHAAN ALI
-                    </text>
-                    
-                    <text x="400" y="150" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#ffffff" letter-spacing="1" text-anchor="middle">
-                        Instagram: @syedzeeshaanali07
-                    </text>
-                    
-                    <text x="400" y="185" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#ffe066" font-weight="bold" letter-spacing="1" text-anchor="middle">
-                        Contact: +91 7989698613
-                    </text>
-                </svg>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Rohan Joshi</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Awesome food quality. The BBQ Chicken Mandi had a smoky aroma that made it stand out from other local places.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Ayesha Fatima</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">The dessert section is equally good! Tried the Kunafa after our meal, served piping hot with great cheese stretch.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Karthik V.</div>
-                <div class="rating">★★★★☆</div>
-                <div class="comment">Great hangout spot with friends. Quantity served in a 4-person Mandi tray easily satisfies 5 people. Value for money!</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Dr. Nabeel Pasha</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Exquisite taste and proper authentic preparation. Mutton piece quality is consistent every time we visit.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Priyanka Sen</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Clean environment, polite staff, and quick service. The complimentary soup is comforting. Highly recommended!</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Sheikh Imran</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Best place for family dinners. Plenty of space, traditional seating, and authentic spices that suit everyone's taste.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Manish Verma</div>
-                <div class="rating">★★★★☆</div>
-                <div class="comment">The Grilled Chicken Mandi was perfectly cooked, crispy on the outside and tender inside. Good atmosphere overall.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Zainab Unnisa</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Very nice family ambiance with complete privacy in Majlis cabins. The kids thoroughly enjoyed the meal.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Deepak Chawla</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Authentic flavors, huge portions, and reasonable pricing. Mandi Knights is easily my go-to place for weekend dining.</div>
-            </div>
-
-            <div class="review-card">
-                <div class="reviewer-name">Samiuddin Ahmed</div>
-                <div class="rating">★★★★★</div>
-                <div class="comment">Extremely satisfied with service and taste. The spice mix in the long-grain basmati rice is phenomenal!</div>
-            </div>
-
-        </div>
-
-        <div class="map-section">
-            <h2>Find Mandi Knights Family Restaurant</h2>
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.7356230831616!2d80.1478!3d17.2472!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a34f89d97bf5d0f%3A0x6b44a70f2f79020a!2sMandi%20Knights%20Family%20Restaurant!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-                    width="600" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-
+    <!-- DEVELOPER BANNER WITH LOGO -->
+    <div class="dev-banner">
+        <!-- Logo file should be in the same folder as index.html -->
+        <img src="logo.png" alt="Syed Zeeshaan Ali Logo" class="dev-logo">
+        <div class="subtitle">System Developed & Powered By</div>
+        <div class="name">SYED ZEESHAAN ALI</div>
+        <div class="contact">Instagram: @syedzeeshaanali07</div>
+        <div class="contact phone">Contact: +91 7989698613</div>
     </div>
 
-    <footer>
-        © Mandi Knights Family Restaurant Review Portal | Developed by Syed Zeeshaan Ali | Hosted on GitHub Pages
-    </footer>
+    <!-- MAIN APP CONTAINER -->
+    <div class="container">
+        
+        <div class="restaurant-title">
+            <h1>Mandi Knights</h1>
+            <p>★★★★★ Leave a Quick Review</p>
+        </div>
 
+        <div class="step-box">
+            <div class="instruction">1. Tap a comment to select it:</div>
+            
+            <div id="opts">
+                <div class="comment-option selected" onclick="selectComment(this)">
+                    "The Mutton Juicy Mandi is absolute perfection! Meat is extremely soft and the rice is flavorful. Excellent family environment!"
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Best Mandi experience in Khammam! Traditional Majlis seating gave us great privacy. Fast service and authentic Arabian taste."
+                </div>
+                <div class="comment-option" onclick="selectComment(this)">
+                    "Top quality food with generous portions! The complementary soup and mayonnaise were fresh and delicious. Highly recommended! 10/10"
+                </div>
+            </div>
+
+            <div class="instruction" style="margin-top: 20px;">2. Post to Google Maps:</div>
+            
+            <button class="action-btn" id="submitBtn" onclick="copyAndRedirect()">
+                Copy & Open Maps
+            </button>
+            
+            <div id="toast" class="toast-msg">Text Copied! Opening Google Maps...</div>
+        </div>
+    </div>
+
+    <script>
+        var selectedText = "The Mutton Juicy Mandi is absolute perfection! Meat is extremely soft and the rice is flavorful. Excellent family environment!";
+
+        function selectComment(el) {
+            document.querySelectorAll('.comment-option').forEach(e => e.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedText = el.innerText.replace(/^"|"$/g, ''); 
+        }
+
+        function copyAndRedirect() {
+            var btn = document.getElementById('submitBtn');
+            var toast = document.getElementById('toast');
+            
+            btn.innerText = "Copying...";
+            btn.style.background = "#8a5608";
+
+            navigator.clipboard.writeText(selectedText).then(function() {
+                toast.style.display = 'block';
+                
+                setTimeout(function() {
+                    // 2. PASTE YOUR GOOGLE MAPS REVIEW LINK HERE
+                    window.location.href = "https://maps.app.goo.gl/s4jm5UtzXXibzqud7";
+                }, 1000);
+            }).catch(function(err) {
+                // 3. PASTE THE SAME GOOGLE MAPS REVIEW LINK HERE
+                window.location.href = "https://maps.app.goo.gl/s4jm5UtzXXibzqud7";
+            });
+        }
+    </script>
 </body>
 </html>
